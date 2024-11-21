@@ -4173,3 +4173,40 @@ input, select, textarea {
 		}
 
 	}
+    /* Modernized styles */
+    body {
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Roboto', sans-serif;
+        margin: 10px 0;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        transition: background 0.3s ease;
+    }
+    .btn:hover {
+        background: #0056b3;
+    }
+    .fade-in {
+        animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
