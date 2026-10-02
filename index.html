@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angad Preet Singh | Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{--ink:#0b0d26;--ink2:#14173b;--paper:#f2eeff;--mint:#2de2c4;--amber:#ffb347;--violet:#7a5cff;--mut:#a9acd0}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font:400 17px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden;
+background-image:radial-gradient(60vw 60vw at 85% -10%,#2b2272 0,transparent 60%),radial-gradient(50vw 50vw at -10% 40%,#0c3b49 0,transparent 60%)}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;background:linear-gradient(var(--ink),transparent)}
+nav b{font-family:'Bricolage Grotesque';font-size:20px}
+nav div a{margin-left:22px;text-decoration:none;color:var(--mut);font-weight:500}
+nav div a:hover{color:var(--mint)}
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:20px;padding-top:70px}
+.hero h1{font-size:clamp(46px,7vw,92px);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block;color:var(--mint)}
+.hero p{color:var(--mut);max-width:30em;margin:22px 0 30px;font-size:19px}
+.hero p b{color:var(--paper)}
+.me{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.me img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--amber)}
+.btn{display:inline-block;padding:14px 26px;border-radius:12px;background:var(--mint);color:var(--ink);font-weight:700;text-decoration:none;box-shadow:0 6px 0 #14937f;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 3px 0 #14937f}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px var(--violet);margin-left:12px}
+.stage{height:min(78vh,620px);perspective:1100px;display:flex;align-items:center;justify-content:center}
+.world{position:relative;width:420px;height:420px;transform-style:preserve-3d;transition:transform .12s ease-out}
+.floor{position:absolute;inset:-20px;background:linear-gradient(rgba(122,92,255,.35) 1px,transparent 1px) 0 0/60px 60px,linear-gradient(90deg,rgba(122,92,255,.35) 1px,transparent 1px) 0 0/60px 60px;border:1px solid rgba(122,92,255,.5);transform:translateZ(-1px)}
+.bar{position:absolute;width:44px;height:44px;transform-style:preserve-3d;transform:translateZ(0) scaleZ(1)}
+.bar i{position:absolute;display:block;transform-style:preserve-3d}
+.bar .t,.bar .f,.bar .r{position:absolute}
+.bar .t{width:44px;height:44px;left:0;top:0;background:var(--c)}
+.bar .f{width:44px;left:0;top:44px;transform-origin:top;transform:rotateX(-90deg);background:linear-gradient(var(--c),#0b0d26 140%);filter:brightness(.8)}
+.bar .r{width:44px;left:44px;top:0;transform-origin:left;transform:rotateY(90deg);background:linear-gradient(var(--c),#0b0d26 140%);filter:brightness(.6)}
+.orb{position:absolute;left:170px;top:170px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--amber) 40%,#a35a00);box-shadow:0 0 60px var(--amber);transform:translateZ(300px)}
+/* sections */
+section{padding:90px 0}
+.h2{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.sub{color:var(--mut);margin-bottom:44px;max-width:36em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:34px;perspective:1400px}
+.tilt{position:relative;transform-style:preserve-3d;transition:transform .15s ease-out;border-radius:18px;background:linear-gradient(160deg,var(--ink2),#0f1230);box-shadow:0 30px 50px -25px #000,inset 0 0 0 1px rgba(255,255,255,.08);overflow:visible;text-decoration:none;display:block}
+.tilt .shine{position:absolute;inset:0;border-radius:18px;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.22),transparent 55%);opacity:0;transition:opacity .2s}
+.tilt:hover .shine{opacity:1}
+.proj img{display:block;width:calc(100% - 28px);height:190px;object-fit:cover;margin:14px;border-radius:12px;transform:translateZ(40px);box-shadow:0 20px 30px -10px #000}
+.proj .body{padding:6px 22px 24px;transform:translateZ(25px)}
+.proj h3{font-size:22px;margin-bottom:8px}
+.proj p{color:var(--mut);font-size:15.5px;margin-bottom:14px}
+.proj em{font-style:normal;font-weight:700;color:var(--mint)}
+.cert{padding:24px 24px 22px;min-height:210px}
+.cert>*{transform:translateZ(30px)}
+.cert h3{font-size:21px;margin:10px 0 8px}
+.cert p{color:var(--mut);font-size:15px;margin-bottom:12px}
+.cert em{font-style:normal;font-weight:700;color:var(--amber)}
+.badge{display:inline-block;font-weight:700;font-size:13px;padding:3px 11px;border-radius:99px;background:var(--violet);color:#fff}
+.cert.star{grid-column:1/-1;background:linear-gradient(120deg,#3b2aa0,#0d6b66);display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;min-height:0}
+.cert.star .cap{font-size:84px;transform:translateZ(70px)}
+.cert.star h3{font-size:clamp(26px,4vw,40px)}
+.cert.star p{color:#e6e2ff;max-width:40em}
+.cert.star .badge{background:var(--amber);color:var(--ink)}
+footer{padding:80px 0 60px;background:var(--ink2);margin-top:40px}
+footer ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;padding:0;margin-top:30px}
+footer li{padding:18px;border-radius:14px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+footer li small{display:block;color:var(--mut)}
+footer a{text-decoration:none;color:var(--mint);font-weight:500;word-break:break-all}
+@media(max-width:860px){.hero{grid-template-columns:1fr;text-align:left}.stage{height:420px}.world{transform:scale(.75)}nav div a:nth-child(n+3){display:none}.cert.star{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@keyframes rise{from{transform:translateZ(0) scaleZ(.01)}}
+</style>
+</head>
+<body>
+<nav><b>Angad Preet</b><div><a href="#projects">Projects</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></div></nav>
+
+<main class="wrap">
+<header class="hero">
+  <div>
+    <div class="me"><img src="images/pic09.jpg" alt="Portrait of Angad Preet Singh"><b>Toronto, Ontario</b></div>
+    <h1>Angad Preet Singh<span>Data Analyst</span></h1>
+    <p>I turn messy data into answers people can act on, using <b>Python, SQL, Excel, Tableau and Power BI</b>.</p>
+    <a class="btn" href="#projects">See my projects</a><a class="btn ghost" href="#contact">Get in touch</a>
+  </div>
+  <div class="stage" aria-hidden="true"><div class="world" id="world"><div class="floor"></div><div class="orb"></div></div></div>
+</header>
+
+<section id="projects">
+  <h2 class="h2">Projects</h2>
+  <p class="sub">Dashboards, SQL work and Python notebooks. Each card opens the full project.</p>
+  <div class="grid" id="pg"></div>
+</section>
+
+<section id="certs">
+  <h2 class="h2">Certifications</h2>
+  <p class="sub">Credentials behind the tools. Each card opens the certificate.</p>
+  <div class="grid" id="cg"></div>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2 class="h2">Get in touch</h2>
+  <ul>
+    <li><small>Location</small>Toronto, Ontario</li>
+    <li><small>Phone</small>(289) 946-3260</li>
+    <li><small>Email</small><a href="mailto:angadpreetmalhi@gmail.com">angadpreetmalhi@gmail.com</a></li>
+    <li><small>LinkedIn</small><a href="https://www.linkedin.com/in/angadpreetmalhi/">angadpreetmalhi</a></li>
+    <li><small>GitHub</small><a href="https://github.com/angadpreetmalhi">angadpreetmalhi</a></li>
+  </ul>
+</div></footer>
+
+<script>
+const P=[
+["cyclistics","Google Data Analytics Project","Cyclistic wants to convert casual riders into annual members.","https://github.com/angadpreetmalhi/Cyclistic_googleDataAnalytics"],
+["movies","Movie Correlation with Python","Which variables drive a movie's gross revenue.","https://github.com/angadpreetmalhi/movie_correlation_project/blob/main/movie_correlation_project.ipynb"],
+["covidData","COVID-19 Data Exploration","Exploring global COVID-19 data with SQL Server.","https://github.com/angadpreetmalhi/Tableau/blob/main/SQLQuery1.sql"],
+["houseData","Data Cleaning in SQL","Raw housing data transformed in SQL Server for analysis.","https://github.com/angadpreetmalhi/DataCleaning/blob/main/sqlQueryCleaningData.sql"],
+["covidTab","COVID-19 Dashboard","COVID-19 numbers across the world, in Tableau.","https://public.tableau.com/app/profile/angad.preet.singh/viz/CovidNumbers_16778950563960/CovidNumbers"],
+["airBnb","Airbnb Seattle","Airbnb prices in Seattle, in Tableau.","https://public.tableau.com/app/profile/angad.preet.singh/viz/AirBnBFullProject_16770990591530/Dashboard1"],
+["ipl","IPL Analysis","IPL figures across different teams.","https://github.com/angadpreetmalhi/ipl/blob/main/IPL%20Analysis.ipynb"]];
+const C=[
+["Google Data Analytics","Professional Certificate covering spreadsheets, SQL, Tableau and R.","googleDataAnalytics.pdf"],
+["Software Support Diploma, Mohawk College","Programming, web development, systems analysis, database design, QA testing and technical writing.","mohawk.jpg"],
+["Data Science in Python","Python syntax with Matplotlib for charts and pandas for tabular data.","dataSciPython.pdf"],
+["IBM Data SQL","Analyze data in relational databases and connect SQL to visualizations.","IBM_DataSql.pdf"],
+["Python (Google)","Strings, lists, dictionaries and scripts that automate tasks.","GooglePython.pdf"],
+["Intermediate Python","Matplotlib visuals plus dictionaries and pandas DataFrames.","intermediate.pdf"],
+["Power BI","Python scripts in Power BI for data prep, Seaborn visuals and correlation.","powerBi.pdf"],
+["Tableau","Navigate Tableau, connect data and present clear visualizations.","Tableau.pdf"],
+["DevOps","Software infrastructure plus continuous integration and delivery.","DevOps.jpg"],
+["Data Analysis Using Excel","Formulas, sorts, filters and building reliable, reusable files.","DataAnalysisExcel.pdf"]];
+const $=s=>document.querySelector(s);
+$('#pg').innerHTML=P.map(p=>`<a class="tilt proj" href="${p[3]}"><img src="images/${p[0]}.jpg" alt="${p[1]} preview" loading="lazy"><div class="body"><h3>${p[1]}</h3><p>${p[2]}</p><em>View project</em></div><span class="shine"></span></a>`).join('');
+$('#cg').innerHTML=`<a class="tilt cert star" href="#certs"><div class="cap">🎓</div><div><span class="badge">Degree</span><h3>Master of Science (Data Science)</h3><p>Graduate-level training in data science, building on my analytics and Python foundation.</p></div><span class="shine"></span></a>`+
+C.map(c=>`<a class="tilt cert" href="images/certifications/${c[2]}"><span class="badge">Certified</span><h3>${c[0]}</h3><p>${c[1]}</p><em>View certificate</em><span class="shine"></span></a>`).join('');
+
+// 3D bar chart hero
+const w=$('#world'),cols=['#2de2c4','#7a5cff','#ffb347','#ff6f91'],N=7,S=60;
+for(let x=0;x<N;x++)for(let y=0;y<N;y++){
+ const h=30+Math.round((Math.sin(x*1.3)+Math.cos(y*1.1)+2)*38+Math.random()*30),b=document.createElement('div');
+ b.className='bar';b.style.cssText=`left:${x*S+8}px;top:${y*S+8}px;--c:${cols[(x+y)%4]};transform:translateZ(${h}px);animation:rise 1.2s ${(x+y)*.07}s both cubic-bezier(.2,.8,.2,1)`;
+ b.innerHTML=`<div class="t"></div><div class="f" style="height:${h}px"></div><div class="r" style="height:${h}px;width:${h}px;"></div>`;
+ b.querySelector('.r').style.cssText=`width:${h}px;height:44px;left:44px;top:0;transform-origin:left;transform:rotateY(90deg)`;
+ b.querySelector('.f').style.cssText=`width:44px;height:${h}px;left:0;top:44px;transform-origin:top;transform:rotateX(-90deg)`;
+ w.appendChild(b);}
+let rx=58,rz=-40,tx=58,tz=-40;
+addEventListener('pointermove',e=>{tx=48+(e.clientY/innerHeight)*24;tz=-70+(e.clientX/innerWidth)*60});
+(function loop(){rx+=(tx-rx)*.06;rz+=(tz-rz)*.06;rz+=.0;w.style.transform=`rotateX(${rx}deg) rotateZ(${rz+Math.sin(Date.now()/2500)*6}deg)`;requestAnimationFrame(loop)})();
+
+// card tilt
+document.querySelectorAll('.tilt').forEach(c=>{
+ c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+  c.style.transform=`rotateY(${(x-.5)*16}deg) rotateX(${(.5-y)*16}deg) translateZ(14px)`;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%')});
+ c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+</script>
+</body>
+</html>
